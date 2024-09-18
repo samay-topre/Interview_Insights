@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - Interview Insights{% endblock %}
+
+{% block content %}
+    <h1>Welcome to Interview Insights</h1>
+    
+    <h2>Share Your Experience</h2>
+    <form method="GET" action="{% url 'share_experience' %}">
+        <label for="candidate_name">Candidate Name:</label>
+        <input type="text" id="candidate_name" name="candidate_name" required style="display: block; width: 100%; padding: 10px; margin-bottom: 10px;">
+
+        <label for="college_name">College Name:</label>
+        <input type="text" id="college_name" name="college_name" required style="display: block; width: 100%; padding: 10px; margin-bottom: 10px;">
+
+        <label for="company_name">Company Name:</label>
+        <input type="text" id="company_name" name="company_name" required style="display: block; width: 100%; padding: 10px; margin-bottom: 10px;">
+
+        <label for="tips_advice">Tips/Advice:</label>
+        <textarea id="tips_advice" name="tips_advice" required style="display: block; width: 100%; padding: 10px; margin-bottom: 10px; height: 150px;"></textarea>
+
+        <button type="submit" style="padding: 10px 20px;">Submit</button>
+    </form>
+
+    <h2>Search Experience</h2>
+    <form method="GET" action="{% url 'search_experiences' %}">
+        <input type="text" name="query" placeholder="Search by company name or college name" style="padding: 10px; width: 80%;">
+        <button type="submit" style="padding: 10px 20px;">Search</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Share Experience - Interview Insights{% endblock %}
+
+{% block content %}
+    <h1>Share Your Interview Experience</h1>
+    
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="candidate_name">Candidate Name:</label>
+        <input type="text" id="candidate_name" name="candidate_name" required>
+
+        <label for="college_name">College Name:</label>
+        <input type="text" id="college_name" name="college_name" required>
+
+        <label for="company_name">Company Name:</label>
+        <input type="text" id="company_name" name="company_name" required>
+
+        <label for="tips_advice">Tips/Advice:</label>
+        <textarea id="tips_advice" name="tips_advice" required></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+{% endblock %}

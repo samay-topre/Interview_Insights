@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Experience List - Interview Insights{% endblock %}
+
+{% block content %}
+    <h1>Interview Experiences</h1>
+
+    {% if experiences %}
+        <ul>
+            {% for experience in experiences %}
+                <li>
+                    <strong>{{ experience.candidate_name }}</strong> - {{ experience.company_name }} <br>
+                    College: {{ experience.college_name }} <br>
+                    Tips/Advice: {{ experience.tips_advice }} <br>
+                    <hr>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No experiences found.</p>
+    {% endif %}
+{% endblock %}
